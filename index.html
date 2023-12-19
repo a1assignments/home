@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Responsive Bootstrap Cards with Search</title>
+    
+    <style>
+        *{
+            scroll-behavior:smooth;
+        }
+        .card{
+            box-shadow: 0px 0px 25px black;
+        }
+        .card-title{
+            text-align: center;
+        }
+    </style>
+
+    <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+    }
+    
+    #myBtn {
+      display: none;
+      position: fixed;
+      /* bottom: 200px; */
+      bottom: 150px;
+      right: 50px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #343a40;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+    
+    #myBtn:hover {
+      background-color: #555;
+    }
+
+    #telegramBtn {
+        position: fixed;
+        bottom: 50px;
+        right: 30px;
+        z-index: 99;
+        /* display: none; */
+      /* bottom: 130px; */
+      /* font-size: 18px; */
+      /* border: 100%; */
+      /* outline: none; */
+      /* background-color: #343a40; */
+      /* border-radius: 4px; */
+      /* color: white; */
+      cursor: pointer;
+      /* padding: 15px; */
+      background: none;
+      border: none;
+      animation: flipHorizontal 2s linear infinite; /* Adjust the duration as needed */
+    }
+    @keyframes flipHorizontal {
+    0% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(-1);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+    
+    /* #telegramBtn:hover { */
+      /* background-color: #555; */
+    /* } */
+    </style>
+
+</head>
+
+<body class="mb-5">
+
+    
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <a href="https://t.me/A1Assignments" target="_blank" id="telegramBtn"><img src="https://img.icons8.com/fluency/96/telegram-app.png" alt=""></a>
+    <!-- <button id="telegramBtn"><img src="./IMAGES/telegram48.png" alt=""></button> -->
+
+    <!-- <h1 class="text-center mt-5">
+        A1 Assignments
+    </h1> -->
+
+    
+     <!-- Navigation Bar -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand text-light" href="/"><img src="./IMAGES/logo.png" alt=""></a>
+            <a class="navbar-brand text-light" href="/">A1 Assignments</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav text-center ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link text-light" href="/#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#SearchbySubject">Search by Subject</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="https://t.me/A1Assignments" target="_blank">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5" id="SearchbySubject">
+        <h1 class="text-center">
+            Search Your Subject
+        </h1>
+        <div class="row">
+            <div class="col-12 mt-3">
+                <input type="text" id="searchInput" class="form-control border-primary bg-dark text-light" placeholder="Type subject here">
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5" id="PredefinedSubjects">
+        <h1 class="text-center">
+            Predefined Subjects
+        </h1>
+
+        
+        <div class="row">
+            <div class="col">
+                <div class="d-flex flex-wrap">
+
+
+                    
+                    <!-- <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_Subject_Name">
+                        <img src="./IMAGES" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">Subject_Name</h5>
+                        </div>
+                    </div>
+
+                    <!- - Modal - ->
+                    <div class="modal fade" id="exampleModal_Subject_Name" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Subject_Name - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <b>Assignment of Subject_Name</b>
+                                <p>One </p>
+                                
+                                <hr class="bg-dark">
+
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div> -->
+
+
+                    <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_Project_Management">
+                        <img src="./IMAGES/Project_Management.png" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">Project Management</h5>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal_Project_Management" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Project Management - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES/Project_Management.png" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <b>Assignment of Conference Planning Project </b>
+                                <p>You are a project coordinator at a large media company in Kitchener, Ontario, and you have been assigned the task of planning for five managers of your company to attend and present at an upcoming national convention. You have decided to use MS Project to help you keep track of all the tasks you will need to coordinate. </p>
+                                <hr class="bg-dark">
+
+                                <b>Assignment of creating a timeline and delegating some tasks to others </b>
+                                <p>You have decided that you are going to need more time preparing for your classes than originally designated. Preliminary work preparing student materials is moving along smoothly, but you have run into problems allocating enough time to review course materials and work with the new textbooks. You want to create a timeline and delegate some tasks to others that you will not need to do yourself. You have enlisted some of your better students to help you with the preparation for the new courses you are going to be teaching. In addition, one of the students will be working through the projects with you to give you a better idea of what may cause issues with other students.</p>
+                                <hr class="bg-dark">
+
+                                <b>Project of business case, meeting minutes, team charter, team responsibility, weighted score model, Milestone Group, Scope validation and Change control, Work Breakdown Structure(WBS), Probability Impact Matrix, Communications management plan, RACI, Risk Register</b>
+
+                                <b>Project of Reflection on Applied Assessments, Connection to Course Concepts, Future Development, Recommendations</b>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_Full_Stack_Programming">
+                        <img src="./IMAGES/Full_Stack_Programming.png" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">Full Stack Programming</h5>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal_Full_Stack_Programming" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Full Stack Programming - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES/Full_Stack_Programming.png" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <b>Assignment of Node Project Setup and Add Routing</b>
+                                <p>In the assignment you allow the user to navigate from one page to another page, using appropriate routing and create UI components only</p>
+                                <hr class="bg-dark">
+                                <b>Assignment of MongoDB setup, Data Model and CRUD operation </b>
+                                <p>In this assignment you allow user to enter data from G2 page, save them to DB and fetch those data from G page, and allow to update them.</p>
+                                <hr class="bg-dark">
+                                <b>Assignment of adding User Authentication</b>
+                                <p>In this assignment, you will add user authentication and protest G2_page, G_page, so that only login User with UserType= Driver can access this page.</p>
+                                <hr class="bg-dark">
+                                <b>Assignment of Appointment Creation and Appointment selection</b>
+                                <p>In this assignment, you allow the admin user to enter appointment time slot, later display those time slots on Driver’s view and driver can select those and book appointment time slot.</p>
+                                <hr class="bg-dark">
+                                <b>Project of Creating Examiner Interface</b>
+                                <p>In this assignment, you will add Examiner side of view in the application. On the examiner page you can see the list of appointment or the driver ready for the drive test. Also, Examiner may want to filter data to see only people looking to G2 test or G test. </p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_Advanced_JavaScript_Programming">
+                        <img src="./IMAGES/Advanced_JavaScript_Programming.png" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">Advanced JavaScript Programming</h5>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal_Advanced_JavaScript_Programming" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Advanced JavaScript Programming - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES/Advanced_JavaScript_Programming.png" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <b>Assignment of validating a form using JavaScript</b>
+                                <p>In this Assignment, you’ll use JavaScript to validate a reservation request form.</p>
+                                <hr class="bg-dark">
+
+                                <b>Assignment of Navigate between pages and use a cookie</b>
+                                <p>In this assignment, you’ll develop an application that allows you to log in, save the user data in a cookie, navigate to a new page, and log out.</p>
+                                <b>Navigate between pages and use session storage</b>
+                                <p>In this assignment, you’ll enhance the Account Profile application to save its data in session storage, navigate to a new page, and allow you to navigate back to the original page. When you click on the Save button, a new page gets the data from session storage and displays it.</p>
+                                
+                                <hr class="bg-dark">
+
+                                <b>Assignment of allowing multiple task entries in the Task List application</b>
+                                <p>In this assignment, you’ll make an enhancement that allows you to enter multiple tasks separated by commas in a single entry. </p>
+
+                                <b>Develop the Student Scores application</b>
+                                <p>In this assignment, you’ll develop an application that tracks student’s scores, tallies the average of the entered scores, and sorts the entered students by last name.</p>
+                                <hr class="bg-dark">
+
+                                <b>Assignment of Using an object literal with the Change Calculator</b>
+                                <p>In this assignment, you’ll modify a Change Calculator application so it uses an object literal. When you’re done, the application will work the same as it did before. </p>
+                                <b>Use a class with the Change Calculator</b>
+                                <p>In this assignment, you’ll modify a Change Calculator application so it uses a class. When you’re done, the application will work the same as it did before. </p>
+                                <b>Convert the PIG app to objects</b>
+                                <p>In this assignment, you’ll be converting the PIG application from chapter 12 so it uses objects. When you’re done, the application will work the same as it did before, but the code will be organized differently.</p>
+                                <hr class="bg-dark">
+
+                                <b>Assignment of Using the module pattern to create private state</b>
+                                <p>In this assignment, you’ll update the Trips application so it uses the module pattern to create private state for the object that stores the array of trips. When you’re done, the application should work the same as it did before.</p>
+                                <b>Convert the Clock application to closures</b>
+                                <p>In this assignment, you’ll convert a Clock application to use closures.</p>
+                                <hr class="bg-dark">
+                                
+                                <b>Assignment of Using data from NASA’s Mars Rover Photos API</b>
+                                <p>In this assignment, you’ll modify an application that allows you to view photos from any of the rovers sent to Mars by NASA. After selecting a rover, a date, and camera and clicking the “View” button.</p>
+                                <b>Enhance the Ajax for an application</b>
+                                <p>In this assignment, you’ll update a Blog application to change the way the blog posts are displayed. When you’re done, the application should look and work the same as it did before, but it should display different blog posts.</p>
+                                <hr class="bg-dark">
+                                
+                                <b>Assignment of running and modifying a server-side script</b>
+                                <p>In this assignment, you’ll use Node.js to run an existing server-side script that reads a text file. Then, you’ll modify this script so it works better.</p>
+                                <b>Create and run a script with parameters</b>
+                                <p>In this assignment, you’ll finish the JavaScript for a server-side script named test_scores that calculates the average of the test scores that are passed to it. You should be able to pass one or more test scores to this script.</p>
+                                <hr class="bg-dark">
+
+                                <b>Project of Creating A Task Manager</b>
+                                <p>Create a client-side JavaScript task manager.</p>
+                                <p>Users should be able to add, edit, and delete tasks. </p>
+                                <p>Record at least 5 different details about each task. For example, you will at least need the Task description and who it is assigned to. Choose 3 or more other details to include for each task.</p>
+                                <p>Store the tasks in localStorage. When the page loads, it should check localStorage and display all the tasks.</p>
+                                <p>There should be a search filter that allows you to only display tasks that contain a certain text. If any detail of a task contains the text, it should be displayed. For example, if a person's name is typed in the search filter, only notes that contain their name or that are assigned to them should be displayed. Use Array.prototype.filter() to filter list of tasks. etc...</p>
+                                <hr class="bg-dark">
+
+                                <b>Project of Modifying The Task Manager</b>
+                                <p>You will modify the previously created Task manager app as per the given instructions. </p>
+                                <hr class="bg-dark">
+
+                                <b>Exam of Creating an IIFE that returns an object. Assign the return value to a constant named "product".</b>
+                                <p>The object should have a method called setProductId that accepts an integer as a parameter. The setProductId method should save the value of the integer to a variable that is local to the IIFE.</p>
+                                <p> The object should have a method called getProductInfo that doesn't accept any parameters. etc...</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_Mobile_Application_Development">
+                        <img src="./IMAGES/Mobile_Application_Development.png" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">Mobile Application Development</h5>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal_Mobile_Application_Development" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Mobile Application Development - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES/Mobile_Application_Development.png" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <b>Lab 1 - Design, Lab 2 - Java, Lab 3 - Basic Android, Lab 4 - RecyclerView, Lab 5 - ViewPager</b>
+                                <hr class="bg-dark">
+
+                                <b>Project of application design.</b>
+                                <p>You are being evaluated on design.Your job is to create a basic design for this eCommerce application. etc...</p>
+                                <p>Create a home screen with a logo or image on it.</p>
+                                <p>Create a CardView which contains an image of your item, and a few TextViews for the price, brand, a short description.</p>
+                                <p>Create a stylish check-out form which could be used for a user purchasing something from the store. It should contain fields for names, emails, credit card number, security code, etc...</p>
+                                <hr class="bg-dark">
+
+                                <b>Project of eCommerce Application</b>
+                                <p>Your main goal is to create a functioning eCommerce application. Starting from a home screen with a logo, when a user presses a button, they should be taken to a list of products displayed in card form. The list should be created from some collection of data like an ArrayList. You’ll need to combine the list with a RecyclerView to create a CardView for each piece of data. When the user clicks on a card, they’re taken to another screen which contains the full information about the product they clicked as well as a button to purchase it. Finally they’re taken to a final screen with a check-out form.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_Advanced_Database_Design">
+                        <img src="./IMAGES/Advanced_Database_Design.png" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">Advanced Database Design</h5>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal_Advanced_Database_Design" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Advanced Database Design - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES/Advanced_Database_Design.png" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <b>Project of developing web-based software with receipt generating of purchase.</b>
+                                <p>In this project, each group will develop web-based software that will create reports and perform calculations to support a business. Your job is to develop both the backend and front-end of the software. You need to use FPDF (http://www.fpdf.org/) or a similar library with your favorite front-end coding tools and backend database. </p>
+                                <p>Your tasks are:</p>
+                                <p>1. Draw an ER diagram for your database. Name and create your database as GroupName_DBName. Please choose the name of your group, such as Soft Logic or W3 Soft, etc.</p>
+                                <p>2. Your database at least has three or more tables.</p>
+                                <p>3. Every table needs to have at least three columns. etc...</p>
+                                <hr class="bg-dark">
+
+                                <b>Assignment involves the creation of a stored procedure, the execution of that procedure, data insertion into a table, and the creation of a trigger</b>
+                                <p>The use of stored procedures to update data in the sales_tax_rate table, inserts data into the geo_provinces_ca table, and creates a trigger to enforce data consistency in the iso column of the geo_provinces_ca table. The script makes use of the DELIMITER command to handle the syntax of creating procedures and triggers.</p>
+                                <hr class="bg-dark">
+
+                                <b>Assignment includes  the creation of a stored procedure for handling balance transactions with proper transaction management.</b>
+                                <p>Two views are created: one updatable and one non-updatable. A record is inserted into the updatable view, but an attempt to insert a record into the non-updatable view may not be successful.The use of stored procedures and views in managing transactions and data retrieval.</p>
+                                <hr class="bg-dark">
+
+                                <b>Assignment of the database consists of tables representing students, enrollment details, courses, and terms.</b>
+                                <p>
+                                    Relationships between tables are established using foreign keys.
+                                    Data is inserted to populate the tables.
+                                    Sample queries demonstrate how to retrieve information about a specific student, their grades, enrolled courses, and the corresponding terms.
+                                    The schema appears to support tracking student enrollment and academic performance efficiently.</p>
+                                <hr class="bg-dark">
+
+                                <b>The assignment involves the activation of the global event scheduler.</b>
+                                <p> 
+                                    An event named remove_punch_times is created to automatically delete rows from the punch_data table where the punch time is after '15:00:00' every month.
+                                    A stored procedure calculates the number of weeks a person has been in Canada since a specified arrival date.
+                                    The stored procedure is called with the arrival date to demonstrate its functionality.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_Advanced_Responsive_Site_Design">
+                        <img src="./IMAGES/Advanced_Responsive_Site_Design.png" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">Advanced Responsive Site Design</h5>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal_Advanced_Responsive_Site_Design" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Advanced Responsive Site Design - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES/Advanced_Responsive_Site_Design.png" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <b>Project of building a Responsive Website </b>
+                                <p>Build a complete responsive website on any topic of your choices using the principles discussed below.</p>
+                                <p>HTML 5 standards and validated</p>
+                                <p>A SINGLE css sheet</p>
+                                <p>Using Grid or Flexbox as the framework of the page</p>
+                                <p>At least 3 columns wide on desktop on one page</p>
+                                <p>2 Media query breakpoints</p>
+                                <p>At least 1 transition, 1 transformation and 1 animation on any page</p>
+                                <p>Fonts should resized based on the viewport width without using media queries. etc...</p>
+                                <hr class="bg-dark">
+
+                                <b>Project of creating website using AI</b>
+                                <p>This project will u􀆟lize Chat GPT to create a 4 page website of any topic you wish to ask it to code. It should have a home page, about us page, a 3rd page fi􀆫ng to the topic of your site (i.e. services, products, etc) and a contact page with form and map. It should supply writen content for the site. The site should be responsive for mobile and tablet screens. It should provide all the CSS for the site as well. Use Dall-e to create a hero image and logo for your website and add the images into your website manually.</p>
+                                
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_Responsive_Site_Design">
+                        <img src="./IMAGES/Responsive_Site_Design.png" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">Responsive Site Design</h5>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal_Responsive_Site_Design" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Responsive Site Design - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES/Responsive_Site_Design.png" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <b>Assignment of HTML Basics, CSS Basics, CSS Box model & Web Graphics</b>
+                                <p>This assignment is the first step of building up a responsive website for a garden center “Gabriel Green Garden House”, This assignment incorporates generic CSS styles (color, font & text) to the website, the expected outputs of index.html and plants.html. This assignment is a continuation of the previous assignment with a focus on the application CSS box-model for preliminary layout configuration and web graphics for visual engagement. </p>
+                                <hr class="bg-dark">
+
+                                <b>Assignment of Multi-column layout</b>
+                                <p>This assignment is a continuation of the previous assignment with a focus on the application of CSS float to generate multi-column layouts.</p>
+                                <hr class="bg-dark">
+
+                                <b>Project of creating website.</b>
+                                <p>For this project, you are required to create a one-page website (or optionally one representative page of a website) about any topic in any style. The layout of the web page MUST follow one of the wireframes provided below. Visual elements such as graphics must be used, and properly geared towards the goal of design – neat, engaging, and easy to follow.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_Digital_Design_and_User_Interaction">
+                        <img src="./IMAGES/Digital_Design_and_User_Interaction.png" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">Digital Design and User Interaction</h5>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal_Digital_Design_and_User_Interaction" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Digital Design and User Interaction - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES/Digital_Design_and_User_Interaction.png" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <b>Assignment of Understanding the User and User Flow</b>
+                                <p>Design a UI for the User and User Flow. Redesign and improve the UI and the user flow and improve three screens from these established startup companies using the company's existing assets (artwork, graphics, logo). etc...</p>
+                                <hr class="bg-dark">
+                                
+                                <b>Assignment of Creating a Wireframe Prototype</b>
+                                <p>A new company or start-up has contracted you to design a unique responsive business site which will include these screens landing/home, products/services, and an about. Gather the client or company's information with the questionnaire. The type of company will dictate the look and feel, colour, fonts, and mood of the imagery. Using the resources below, you can create and must customize any of your assets for the wireframes from Lo-Fi to Hi-Fi.</p>
+                                <hr class="bg-dark">
+
+                                <b>Project of User Requirements and Organizing Content</b>
+                                <p>Design and improve the site with consideration of the user's requirements and organizing of content.</p>
+                                <p>A digital XD Low-Fidelity wireframe showing blocking, chunking out the information and visual hierarchy.</p>
+                                <p>Create Hi-Fi Interactive Clickable (Wired) Prototype in XD</p>
+                                <hr class="bg-dark">
+
+                                <b>Project of Completing UX Design</b>
+                                <p>Design and improve the site with consideration of the user's requirements and organizing of content - a new design and different company.</p>
+                                <p>Map out the user flow and content blocks (the visual design and information hierarchy) final sketch. Include the sketch in XD key artboard.</p>
+                                <p>Create a Hi-Fi Interactive Clickable Prototype of 6-7 pages</p>
+                                <p>Style guide to be included in the XD file. All artboards (screens) must be consistent in format, style and look.</p>
+                                <hr class="bg-dark">
+
+                                <b>Project of Creating a Hi-Fi Wireframe Working Prototype using XD</b>
+                                <p>Create a Hi-Fi Wireframe Prototype Clickable using XD with two wired key screens to create and improve the look and ease of use</p>
+                                <hr class="bg-dark">
+
+                                <b>Project of Creating a Hi-Fi Wireframe Prototype Clickable using XD with 2 wired screens to create the mood and look for an "ADVENTURE CANADA"</b>
+                                <p>Create a SIMPLE SPECTACULAR SPLASH SCREEN that will connect to the 2nd screen.</p>
+                                <p>Create ONLY 1 of the TRIPS screens for your 2nd screen.</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_Database_Design">
+                        <img src="./IMAGES/Database_Design.png" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">Database Design</h5>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal_Database_Design" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Database Design - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES/Database_Design.png" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <p>Find the ID and name of each student who has taken at least one Comp. Sci. course; make sure there are no duplicate names in the result.</p>
+                                <p>Create a new course “CS-001”, titled “Weekly Seminar”, with 0 credits.</p>
+                                <p>Create a section of this course in Fall 2017, with sec_id of 1, and with the location of this section not yet specified. etc...</p>
+                                <hr class="bg-dark">
+
+                                <p>Complete the following queries using subqueries, join statements, aggregate functions, views, etc...</p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_JavaScript_Programming">
+                        <img src="./IMAGES/JavaScript_Programming.png" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">JavaScript Programming</h5>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal_JavaScript_Programming" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">JavaScript Programming - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES/JavaScript_Programming.png" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <b>Assignment of convert number grades to letter grades</b>
+                                <p>Create an application that asks the user to enter a number grade between 0 and 100. The application should get the number grade value, convert it into letter grade, then displays the letter grade result. The application should also validate the entered value to be between 0 and 100, otherwise, it should display an error message. Finally, the application should ask the user if they wish to exit the application </p>
+                                <hr class="bg-dark">
+                                
+                                <b>Assignment of class grade stats</b>
+                                <p>Create an application that allows the user to add student grades. The application should also calculate and display different statistics related to the grades entered. Refer to the following images for reference.</p>
+                                <hr class="bg-dark">
+                                
+                                <b>Assignment of working with timers</b>
+                                <p>In this assignment, you’ll create an application that displays the current time in hours, minutes, and seconds.</p>
+                                <hr class="bg-dark">
+
+                                <b>Assignment of working with a carousel</b>
+                                <p>In this assignment, you’ll update a carousel application by adding animation and changing its behavior.</p>
+                                <hr class="bg-dark">
+
+                                <b>Assignment of working with form validation</b>
+                                <p>In this assignment, you’ll use JavaScript to validate a reservation request form.</p>
+                                <hr class="bg-dark">
+
+                                <b>Project of a custom website using HTML/CSS along with JavaScript/jQuery.</b>
+
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card p-3 m-3 mx-auto" style="width: 21rem;" data-toggle="modal" data-target="#exampleModal_Requirements_Development">
+                        <img src="./IMAGES/Requirements_Development.png" class="card-img-top" alt="A1 Assignments">
+                        <div class="card-body">
+                          <h5 class="card-title">Requirements Development</h5>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal_Requirements_Development" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+                        <div class="modal-content">
+                            <div class="modal-header bg-dark text-light">
+                            <h5 class="modal-title" id="exampleModalLabel">Requirements Development - A1 Assignments</h5>
+                            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body"> 
+                                <img src="./IMAGES/Requirements_Development.png" class="rounded img-fluid mx-auto mb-3 d-block" alt="A1 Assignments">
+
+                                <b>Assignment of Business Requirements</b>
+                                <p>One of the first and most important activities you will do as a BA is document the Business Requirements in your Vision and Scope Document. For this assignment, you will create an imaginary project and place yourself in the role of the BA. Your project could be any software development or implementation project – a website, an app, an eCommerce site, a Learning Management System (LMS) – the options are endless. Then you will document your Business Requirements.</p>
+                                <p>Part 1: Describe your scenario.</p>
+                                <p>Part 2: Describe the vision and scope.</p>
+                                <p>Part 3: Document your business requirements.</p>
+
+                                <hr class="bg-dark">
+                                <b>Assignment of User Requirements</b>
+                                <p>Using the same project context from your previous assignments, document your user stories and supporting swimlane diagram.
+                                </p>
+                                <p>Part 1: Describe your scope
+                                </p>
+                                <p>Part 2: User Stories</p>
+                                <p>Part 3: Swimlane diagram</p>
+
+                                <hr class="bg-dark">
+                                <b>Assignment of Solution Requirements</b>
+                                <p>Using the project context and user stories from your previous assignment, document your solution requirements.
+                                </p>
+                                <p>Part 1: Describe your scope</p>
+                                <p>Part 2: Functional Requirements</p>
+                                <p>Part 3: Nonfunctional Requirements</p>
+
+                                <hr class="bg-dark">
+                                <b>Assignment of Elicitation Plan</b>
+                                <p>Your Vision and Scope document, containing your Business Requirements, has been approved by your Executive Sponsor. You are now ready to begin eliciting stakeholder/user requirements. As the project’s Business Analyst, you must create a plan for how to approach the elicitation activities. You have been asked to develop a 10-minute presentation, with accompanying PowerPoint slides, and present your plan to the project team.</p>
+                                <p>A. Summarize your project context</p>
+                                <p>B. Favoured user classes</p>
+                                <p>C. Elicitation plan overview</p>
+                                <p>D. Elicitation activity details</p>
+
+                                <hr class="bg-dark">
+                                <b>Assignment of Release Plan</b>
+                                <p>Your customer team has signed off on the requirements, so they are baselined. There isn’t room in the budget and timeline to build all of the features for which you have documented requirements, so you lead the Customer Team through a prioritization workshop. During this workshop, the Customer Team prioritized the solution’s features using the Three Level Scale (High, Medium, and Low). Then, as a Delivery Team, you allocated these features into 3 releases (1, 2, or 3). Now you must present your release map back to the Customer Team.</p>
+                                <p>A. Project context</p>
+                                <p>B. Prioritized features</p>
+                                <p>C. Release plan</p>
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <a href="https://t.me/A1Assignments" target="_blank" type="button" class="btn btn-success">Inquiry</a>
+                                <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                   
+                </div>
+            </div>
+        </div>
+
+        
+        <h3 class="text-center my-5">
+            Not found your subject? <a href="https://t.me/A1Assignments" target="_blank">Contact Us</a>
+        </h3>
+
+    </div>
+
+
+    <!-- <footer class="bg-dark text-light text-center py-3 fixed-bottom">
+        <div class="container">
+            <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+        </div>
+    </footer> -->
+    
+    
+    
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function () {
+            var searchValue = this.value.toLowerCase();
+            var cards = document.querySelectorAll('.card');
+
+            cards.forEach(function (card) {
+                var cardTitle = card.querySelector('.card-title').innerText.toLowerCase();
+
+                if (cardTitle.includes(searchValue)) {
+                    card.classList.remove('d-none');
+                    card.classList.add('d-block');
+
+                } else {
+                    card.classList.remove('d-block');
+                    card.classList.add('d-none');
+                }
+            });
+        });
+    </script>
+
+<script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+        console.log("scrollFunction");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+        document.get
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBTF51J9VBOhg-Ksvd4POJQ209LUYBBuBo",
+      authDomain: "a1-assignments.firebaseapp.com",
+      projectId: "a1-assignments",
+      storageBucket: "a1-assignments.appspot.com",
+      messagingSenderId: "870592967588",
+      appId: "1:870592967588:web:38fee82d2655621c658731",
+      measurementId: "G-B4S10W7SRR"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  
+</body>
+
+</html>
